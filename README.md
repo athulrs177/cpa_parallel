@@ -1,4 +1,4 @@
-# Python script to parallel compute CPA without 4D nested loops
+# Python package to parallel compute CPA avoiding 4D nested loops
 1) vectorized_cpa()
    An extension to vectorize the cpa() defined for 1D numpy arrays (based on Gneiting and Walz (2022)).
    urocc() can be installed from: https://github.com/evwalz/urocc

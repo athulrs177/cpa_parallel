@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='CPA',
+    name='CPA_3D',
     version='0.1.0',
     url="https://github.com/athulrs177/CPA",
     author="Athul Rasheeda Satheesh",

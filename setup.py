@@ -12,5 +12,6 @@ setup(
         'xarray',
         'uroc @ git+https://github.com/evwalz/urocc.git',
         'dask',
+        'progressbar'.
     ],
 )

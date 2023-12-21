@@ -1,7 +1,7 @@
 # Python package to parallel compute CPA avoiding 4D nested loops
-1) vectorized_cpa()
-   An extension to vectorize the cpa() defined for 1D numpy arrays (based on Gneiting and Walz (2022)).
-   urocc() can be installed from: https://github.com/evwalz/urocc
+1) ```vectorized_cpa()```
+   An extension to vectorize the ```cpa()``` part of ```urocc``` package defined for 1D numpy arrays (based on Gneiting and Walz (2022)).
+   ```urocc``` can be installed from: https://github.com/evwalz/urocc
 
    Parameters:
    - response (xarray.DataArray): An xarray DataArray representing the response variable (e.g., rainfall).
@@ -12,16 +12,16 @@
 
    Note:
    Use this only in cases when parallel processing using packages other than Dask is preferred. 
-   Otheriwse use cpa_multi().
+   Otheriwse use ```cpa_multi()```.
 
-2) cpa_multi()
-   Compute Coefficient of Predictive Ability (CPA) for 3D xarray data-arrays of the form ('time', lat, lon) used 
+2) ```cpa_multi()```
+   Compute Coefficient of Predictive Ability (CPA) for 3D xarray data-arrays of the form ```('time', lat, lon)``` used 
    in Rasheeda Satheesh et al. (2023).
    Uses parallel processing from Dask avoiding slow 4D nested for-loops.
 
    Note:
-   This is an extension of cpa() defined for 1D numpy arrays (based on Gneiting and Walz (2022)) which is part of 
-   the the urocc package. urocc can be installed from: https://github.com/evwalz/urocc 
+   This is an extension of ```cpa()``` defined for 1D numpy arrays (based on Gneiting and Walz (2022)) which is part of 
+   the the ```urocc``` package. ```urocc``` can be installed from: https://github.com/evwalz/urocc 
     
    Parameters:
    - response (xarray.DataArray): The response dataset.

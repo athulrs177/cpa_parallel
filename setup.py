@@ -10,7 +10,7 @@ setup(
     install_requires=[
         'numpy',
         'xarray',
-        'urocc @ git+https://github.com/evwalz/urocc.git',
+        'uroc @ git+https://github.com/evwalz/urocc.git',
         'dask',
     ],
 )

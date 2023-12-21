@@ -58,6 +58,10 @@ def cpa_multi(response, predictor, res_LatLon_chunks, pre_LatLon_chunks, schedul
     - result (xarray.DataArray): Resulting CPA array with dimensions ('lon_tar', 'lat_tar', 'lon_pre', 'lat_pre').
     """
 
+    # Transpose to ('time','lat','lon')
+    response = response.transpose('time','lat','lon')
+    predictor = predictor.transpose('time','lat','lon')
+    
     # Get dimensions of the input datasets
     res_dims = response.shape
     pre_dims = predictor.shape

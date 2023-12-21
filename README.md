@@ -16,7 +16,7 @@ Contents:
 
    Note:
    Use this function when you are building parallel processing architectures not using Dask. 
-   If you just want to apply ```cpa()``` in your domain of analysis, just use ```cpa_multi()```.
+   If you only want to apply ```cpa()``` in your domain of analysis, use ```cpa_multi()``` instead.
 
 2) ```cpa_multi()```
    Compute Coefficient of Predictive Ability (CPA) for 3D xarray data-arrays of the form ```('time', lat, lon)``` used 

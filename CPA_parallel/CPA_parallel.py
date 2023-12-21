@@ -39,7 +39,7 @@ def vectorized_cpa(response, predictor):
     
 def cpa_multi(response, predictor, res_LatLon_chunks, pre_LatLon_chunks, scheduler='processes'):
     """
-    Compute Coefficient of Predictive Ability (CPA) for 3D xarray data-arrays of the form ('time', lat, lon) used 
+    Compute Coefficient of Predictive Ability (CPA) for 3D xarray data-arrays of the form (time, lon, lat) used 
     in Rasheeda Satheesh et al. (2023).
     Uses parallel processing from Dask avoiding slow 4D nested for-loops.
 
@@ -57,10 +57,6 @@ def cpa_multi(response, predictor, res_LatLon_chunks, pre_LatLon_chunks, schedul
     Returns:
     - result (xarray.DataArray): Resulting CPA array with dimensions ('lon_tar', 'lat_tar', 'lon_pre', 'lat_pre').
     """
-
-    # Transpose to ('time','lat','lon')
-    response = response.transpose('time','lat','lon')
-    predictor = predictor.transpose('time','lat','lon')
     
     # Get dimensions of the input datasets
     res_dims = response.shape
@@ -74,7 +70,7 @@ def cpa_multi(response, predictor, res_LatLon_chunks, pre_LatLon_chunks, schedul
     response['time'] = predictor['time']
 
     # Initialize an empty array for the result
-    result = np.empty((res_dims[2], res_dims[1], pre_dims[2], pre_dims[1]), dtype=float)
+    result = np.empty((res_dims[1], res_dims[2], pre_dims[1], pre_dims[2]), dtype=float)
 
     # Create an xarray DataArray for the result
     result = xr.DataArray(name='rainfall_cpa',
@@ -85,10 +81,10 @@ def cpa_multi(response, predictor, res_LatLon_chunks, pre_LatLon_chunks, schedul
                          )
 
     # Create index arrays for efficient assignment
-    j = xr.DataArray(range(res_dims[1]), dims=['lat_tar'])
-    i = xr.DataArray(range(res_dims[2]), dims=['lon_tar'])
-    y = xr.DataArray(range(pre_dims[1]), dims=['lat_pre'])
-    x = xr.DataArray(range(pre_dims[2]), dims=['lon_pre'])
+    j = xr.DataArray(range(res_dims[2]), dims=['lat_tar'])
+    i = xr.DataArray(range(res_dims[1]), dims=['lon_tar'])
+    y = xr.DataArray(range(pre_dims[2]), dims=['lat_pre'])
+    x = xr.DataArray(range(pre_dims[1]), dims=['lon_pre'])
 
     # Perform vectorized CPA computation and assign the result to the output array
     result[i, j, x, y] = vectorized_cpa(response[:, i, j], predictor[:, x, y]).compute(scheduler=scheduler)

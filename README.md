@@ -2,6 +2,7 @@
 
 Install using pip: ```pip install git+https://github.com/athulrs177/cpa_parallel.git```
 
+Contents:
 1) ```vectorized_cpa()```
    An extension to vectorize the ```cpa()``` part of ```uroc``` package defined for 1D numpy arrays (based on Gneiting and Walz (2022)).
    ```uroc``` can be installed from: https://github.com/evwalz/urocc

@@ -28,10 +28,10 @@ Contents:
    the the ```uroc``` package. ```uroc``` can be installed from: https://github.com/evwalz/urocc 
     
    Parameters:
-   - response (xarray.DataArray): The response dataset.
-   - predictor (xarray.DataArray): The predictor dataset.
-   - res_LatLon_chunks (tuple): Chunk sizes for latitude and longitude in the response dataset.
-   - pre_LatLon_chunks (tuple): Chunk sizes for latitude and longitude in the predictor dataset.
+   - response (xarray.DataArray): The response data array.
+   - predictor (xarray.DataArray): The predictor data array.
+   - res_LatLon_chunks (tuple): Chunk sizes for latitude and longitude in the response data array.
+   - pre_LatLon_chunks (tuple): Chunk sizes for latitude and longitude in the predictor data array.
    - scheduler (str, optional): Dask scheduler to use for parallel computation. Default is 'processes'.
 
    Returns:

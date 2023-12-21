@@ -1,7 +1,7 @@
 # Python package to parallel compute CPA avoiding 4D nested loops
 1) ```vectorized_cpa()```
-   An extension to vectorize the ```cpa()``` part of ```urocc``` package defined for 1D numpy arrays (based on Gneiting and Walz (2022)).
-   ```urocc``` can be installed from: https://github.com/evwalz/urocc
+   An extension to vectorize the ```cpa()``` part of ```uroc``` package defined for 1D numpy arrays (based on Gneiting and Walz (2022)).
+   ```uroc``` can be installed from: https://github.com/evwalz/urocc
 
    Parameters:
    - response (xarray.DataArray): An xarray DataArray representing the response variable (e.g., rainfall).
@@ -21,7 +21,7 @@
 
    Note:
    This is an extension of ```cpa()``` defined for 1D numpy arrays (based on Gneiting and Walz (2022)) which is part of 
-   the the ```urocc``` package. ```urocc``` can be installed from: https://github.com/evwalz/urocc 
+   the the ```uroc``` package. ```uroc``` can be installed from: https://github.com/evwalz/urocc 
     
    Parameters:
    - response (xarray.DataArray): The response dataset.
